@@ -7,6 +7,11 @@ name: Docker Image
 
 on:
   workflow_call:
+    inputs:
+      dry-run:
+        required: false
+        type: boolean
+        default: true
 
 env:
   # Use docker.io for Docker Hub if empty
