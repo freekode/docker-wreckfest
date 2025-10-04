@@ -44,20 +44,16 @@ if [[ $steamcmd_rc != 0 ]]; then
     exit $steamcmd_rc
 fi
 
-# Rewrite Config Files
 cp "${STEAMAPPDIR}/initial_server_config.cfg" "${STEAMAPPDIR}/server_config.cfg"
 
-
 echo "Starting Wreckfest Dedicated Server"
-
 cd "${STEAMAPPDIR}"
-
 export DISPLAY=:0
 Xvfb $DISPLAY -screen 0 1024x768x16 & sleep 5
-echo $DISPLAY
-eval "wine ./Wreckfest.exe -s server_config=server_config.cfg -server_set \
+
+eval wine ./Wreckfest.exe -s server_config=server_config.cfg -server_set \
     server_name=${WF_SERVER_NAME} \
     password=${WF_PASSWORD} \
     admin_steam_ids=${WF_ADMINS} \
-    owner_disabled=${WF_OWNER_DISABLED}"
-
+    owner_disabled=${WF_OWNER_DISABLED} \
+    ${WF_ADDITIONAL_ARGS}

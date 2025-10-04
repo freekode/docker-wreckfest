@@ -1,0 +1,16 @@
+name: Build branches
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - 'LICENSE'
+  workflow_dispatch:
+
+jobs:
+  docker-image:
+    uses: ./.github/workflows/docker-image.yml
+    secrets: inherit
+    with:
+      dry-run: false
