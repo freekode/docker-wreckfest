@@ -11,3 +11,4 @@ concurrency:
 jobs:
   docker-image:
     uses: ./.github/workflows/docker-image.yml
+    secrets: inherit
