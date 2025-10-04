@@ -10,6 +10,4 @@ concurrency:
 
 jobs:
   docker-image:
-    needs:
-      - jar
     uses: ./.github/workflows/docker-image.yml
