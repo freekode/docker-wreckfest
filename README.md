@@ -2,6 +2,10 @@
 
 Docker image to run Wreckfest dedicated server. Game requries about 6Gb of space.
 
+## How to run
+
+Example for docker-compose.yml available [here](docker-compose.yml)
+
 ## Env Variables
 
 All are optional

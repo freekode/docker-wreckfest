@@ -1,0 +1,13 @@
+services:
+  wireguard:
+    container_name: wreckfest
+    image: ghcr.io/freekode/docker-wreckfest:latest
+    restart: unless-stopped
+    ports:
+      - "27015:27015"
+      - "27016:27016/udp"
+      - "33540:33540/udp"
+    volumes:
+      - ./wreckfest-data:/home/steam/wreckfest-dedicated
+    stdin_open: true 
+    tty: true 
