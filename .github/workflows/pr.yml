@@ -1,0 +1,15 @@
+name: Build PR
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker-image:
+    needs:
+      - jar
+    uses: ./.github/workflows/docker-image.yml

@@ -50,7 +50,8 @@ ENV WF_SERVER_NAME="wreckfest private server" \
     WF_OWNER_DISABLED=1 \
     WF_STEAM_PORT=27015 \
     WF_QUERY_PORT=27016 \
-    WF_GAME_PORT=33540
+    WF_GAME_PORT=33540 \
+    WF_ADDITIONAL_ARGS=""
 
 # Set permissions on STEAMAPPDIR
 #   Permissions may need to be reset if persistent volume mounted
