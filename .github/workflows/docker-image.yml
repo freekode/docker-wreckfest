@@ -7,17 +7,6 @@ name: Docker Image
 
 on:
   workflow_call:
-    inputs:
-      jar-name:
-        required: true
-        type: string
-      jar-artifact-name:
-        required: true
-        type: string
-      dry-run:
-        required: false
-        type: boolean
-        default: true
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -40,11 +29,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - uses: actions/download-artifact@master
-        with:
-          name: ${{ inputs.jar-artifact-name }}
-          path: artifact
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
