@@ -58,4 +58,7 @@ eval wine ./Wreckfest.exe -s server_config=server_config.cfg -server_set \
     password=${WF_PASSWORD} \
     admin_steam_ids=${WF_ADMINS} \
     owner_disabled=${WF_OWNER_DISABLED} \
+    steam_port=${WF_STEAM_PORT} \
+    query_port=${WF_QUERY_PORT} \
+    game_port=${WF_GAME_PORT} \
     ${WF_ADDITIONAL_ARGS}
