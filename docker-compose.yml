@@ -1,0 +1,20 @@
+services:
+  wreckfest-server:
+    # image: mytag
+    build: .
+    container_name: wreckfest-server
+    volumes:
+      - ~/wreckfest-data:/home/steam/wreckfest-dedicated
+    environment:
+      - WF_SERVER_NAME=Mednieki
+      - WF_PASSWORD=80085
+      - WF_ADMINS=
+      # - WF_STEAM_PORT=27015
+      # - WF_QUERY_PORT=27016
+      # - WF_GAME_PORT=33540
+    ports:
+      - "27025:27015"
+      - "27016:27016/udp"
+      - "33540:33540/udp"
+    stdin_open: true 
+    tty: true 
