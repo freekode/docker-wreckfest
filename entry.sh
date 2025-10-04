@@ -44,7 +44,9 @@ if [[ $steamcmd_rc != 0 ]]; then
     exit $steamcmd_rc
 fi
 
-cp "${STEAMAPPDIR}/initial_server_config.cfg" "${STEAMAPPDIR}/server_config.cfg"
+if [ ! -f "${STEAMAPPDIR}/server_config.cfg" ]; then
+    cp "${STEAMAPPDIR}/initial_server_config.cfg" "${STEAMAPPDIR}/server_config.cfg"
+fi
 
 echo "Starting Wreckfest Dedicated Server"
 cd "${STEAMAPPDIR}"
